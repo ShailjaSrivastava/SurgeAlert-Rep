@@ -1,0 +1,232 @@
+@import "tailwindcss";
+
+/* ===== Google Fonts ===== */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap');
+
+/* ===== SurgeAlert Design System (M3 Inspired) ===== */
+
+@theme {
+  /* --- Colors --- */
+  --color-primary: #b70011;
+  --color-primary-container: #dc2626;
+  --color-on-primary: #ffffff;
+  --color-on-primary-container: #fff6f5;
+  --color-primary-fixed: #ffdad6;
+  --color-primary-fixed-dim: #ffb4ab;
+  --color-on-primary-fixed: #410002;
+  --color-on-primary-fixed-variant: #93000b;
+
+  --color-secondary: #795900;
+  --color-secondary-container: #ffc329;
+  --color-on-secondary: #ffffff;
+  --color-on-secondary-container: #6f5100;
+  --color-secondary-fixed: #ffdf9f;
+  --color-secondary-fixed-dim: #f9bd22;
+  --color-on-secondary-fixed: #261a00;
+  --color-on-secondary-fixed-variant: #5c4300;
+
+  --color-tertiary: #3b54a5;
+  --color-tertiary-container: #556dbf;
+  --color-on-tertiary: #ffffff;
+  --color-on-tertiary-container: #f8f7ff;
+  --color-tertiary-fixed: #dce1ff;
+  --color-tertiary-fixed-dim: #b6c4ff;
+  --color-on-tertiary-fixed: #00164e;
+  --color-on-tertiary-fixed-variant: #264191;
+
+  --color-error: #ba1a1a;
+  --color-error-container: #ffdad6;
+  --color-on-error: #ffffff;
+  --color-on-error-container: #93000a;
+
+  --color-surface: #f7f9fb;
+  --color-surface-dim: #d8dadc;
+  --color-surface-bright: #f7f9fb;
+  --color-surface-container-lowest: #ffffff;
+  --color-surface-container-low: #f2f4f6;
+  --color-surface-container: #eceef0;
+  --color-surface-container-high: #e6e8ea;
+  --color-surface-container-highest: #e0e3e5;
+  --color-surface-variant: #e0e3e5;
+  --color-surface-tint: #bf0715;
+
+  --color-on-surface: #191c1e;
+  --color-on-surface-variant: #5c403c;
+  --color-on-background: #191c1e;
+  --color-background: #f7f9fb;
+
+  --color-outline: #916f6b;
+  --color-outline-variant: #e6bdb8;
+
+  --color-inverse-surface: #2d3133;
+  --color-inverse-on-surface: #eff1f3;
+  --color-inverse-primary: #ffb4ab;
+
+  /* --- Spacing --- */
+  --spacing-gutter: 16px;
+  --spacing-margin-mobile: 16px;
+  --spacing-margin-desktop: 32px;
+  --spacing-max-width: 1280px;
+
+  /* --- Font Family --- */
+  --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
+
+  /* --- Font Sizes --- */
+  --font-size-body-md: 16px;
+  --font-size-body-md--line-height: 24px;
+  --font-size-body-lg: 18px;
+  --font-size-body-lg--line-height: 28px;
+  --font-size-label-bold: 14px;
+  --font-size-label-bold--line-height: 20px;
+  --font-size-status-badge: 12px;
+  --font-size-status-badge--line-height: 16px;
+  --font-size-headline-md: 24px;
+  --font-size-headline-md--line-height: 32px;
+  --font-size-headline-lg-mobile: 24px;
+  --font-size-headline-lg-mobile--line-height: 32px;
+  --font-size-headline-lg: 32px;
+  --font-size-headline-lg--line-height: 40px;
+  --font-size-display-lg: 48px;
+  --font-size-display-lg--line-height: 56px;
+}
+
+/* ===== Base Styles ===== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-tap-highlight-color: transparent;
+}
+
+body {
+  font-family: var(--font-sans);
+  background-color: var(--color-background);
+  color: var(--color-on-surface);
+  font-size: var(--font-size-body-md);
+  line-height: var(--font-size-body-md--line-height);
+  min-height: 100dvh;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+::selection {
+  background-color: var(--color-primary-fixed);
+  color: var(--color-on-primary-fixed);
+}
+
+/* ===== Material Symbols ===== */
+.material-symbols-outlined {
+  font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+  vertical-align: middle;
+  user-select: none;
+}
+
+.filled-icon {
+  font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+}
+
+/* ===== Utility Classes ===== */
+.hard-shadow {
+  box-shadow: 4px 4px 0px 0px rgba(25, 28, 30, 0.15);
+}
+
+.hard-shadow-dark {
+  box-shadow: 4px 4px 0px 0px #191c1e;
+}
+
+.hard-shadow-lg {
+  box-shadow: 8px 8px 0px 0px rgba(0, 0, 0, 0.1);
+}
+
+.glass-card {
+  backdrop-filter: blur(8px);
+  background: rgba(255, 255, 255, 0.85);
+}
+
+/* ===== Animations ===== */
+@keyframes emergency-pulse {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.85; transform: scale(0.98); }
+}
+
+.emergency-pulse {
+  animation: emergency-pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+@keyframes pulse-ring {
+  0% { transform: scale(0.33); opacity: 1; }
+  80%, 100% { opacity: 0; }
+}
+
+.map-pulse::before {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background-color: var(--color-primary);
+  animation: pulse-ring 1.25s cubic-bezier(0.215, 0.61, 0.355, 1) infinite;
+}
+
+@keyframes pulse-red {
+  0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(220, 38, 38, 0.7); }
+  70% { transform: scale(1); box-shadow: 0 0 0 15px rgba(220, 38, 38, 0); }
+  100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(220, 38, 38, 0); }
+}
+
+.pulse-critical {
+  animation: pulse-red 2s infinite;
+}
+
+@keyframes pulse-soft {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.8; transform: scale(1.02); }
+}
+
+.animate-pulse-soft {
+  animation: pulse-soft 3s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+@keyframes check-draw {
+  0% { stroke-dashoffset: 48; }
+  100% { stroke-dashoffset: 0; }
+}
+
+.check-path {
+  stroke-dasharray: 48;
+  stroke-dashoffset: 48;
+  animation: check-draw 0.6s cubic-bezier(0.65, 0, 0.45, 1) forwards;
+  animation-delay: 0.2s;
+}
+
+@keyframes progress-fill {
+  from { width: 0%; }
+}
+
+.progress-bar-transition {
+  transition: width 0.6s cubic-bezier(0.65, 0, 0.35, 1);
+}
+
+/* ===== Scrollbar ===== */
+::-webkit-scrollbar { width: 6px; height: 6px; }
+::-webkit-scrollbar-track { background: var(--color-surface-container-low); }
+::-webkit-scrollbar-thumb { background: var(--color-outline); border-radius: 10px; }
+::-webkit-scrollbar-thumb:hover { background: var(--color-on-surface-variant); }
+
+/* ===== Focus Styles ===== */
+:focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 2px;
+}
+
+/* ===== Safe Area ===== */
+@supports (padding: env(safe-area-inset-bottom)) {
+  .pb-safe {
+    padding-bottom: env(safe-area-inset-bottom);
+  }
+}
