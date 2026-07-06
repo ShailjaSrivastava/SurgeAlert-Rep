@@ -8,7 +8,7 @@ export default function Footer() {
           <span className="font-sans text-primary" style={{ fontSize: '14px', lineHeight: '20px', fontWeight: 700 }}>SurgeAlert</span>
           <span className="text-on-surface-variant font-sans" style={{ fontSize: '14px', lineHeight: '20px', fontWeight: 700 }}>|</span>
           <span className="text-on-surface-variant font-sans" style={{ fontSize: '12px', fontWeight: 700 }}>
-            © 2024 SurgeAlert. All reports are encrypted and support 100% anonymity.
+            © 2026 SurgeAlert. All reports are encrypted and support 100% anonymity.
           </span>
         </div>
         <div className="flex gap-6">
